@@ -1,0 +1,175 @@
+---
+title: "Lecture 3 Notes - Cognitive Load, Clutter, Preattentive Attributes"
+author: "Jeremy Morris"
+affiliation-title: "University of Utah"
+date: last-modified
+title-block-style: default
+title-block-banner: true
+format: 
+  html:
+      embed-resources: true
+      theme: flatly
+      code-block-bg: true
+      code-block-border-left: "#31BAE9"
+      highlight-style: printing
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(ggplot2)
+```
+
+# Quiz 3 Review
+
+## Lecture 3 - Eliminate Clutter
+* Include only what adds to the audience’s understanding, remove everything else
+* Every element added increases cognitive load
+* Clutter = elements that take up space/use ink but do not increase understanding
+* Data-ink: non-erasable ink used for the presentation of data (i.e. if any of the data-ink is removed, the graphic would lose content)
+    * Data-ink ratio = Data-ink / total ink used to print graphic
+    * The data-ink ratio represents the proportion of the graphics ink devoted to the non-redundant display of data/information
+* Gestalt principles: principles of visual perception that define how people interact with and create order out of visual stimuli
+    * They aim to formulate the regularities according to which the perceptual input is organized into unitary forms, also referred to as (sub)wholes, groups, groupings, or Gestalten (the plural form of Gestalt)
+    * Your brain filling in the gaps
+* Gestalt Principles
+    * Proximity
+        * elements tend to be perceived as aggregated into groups if they are near each other
+        * strongest principle
+    * Similarity
+        * elements tend to be integrated into groups if they are similar to each other
+    * Enclosure
+        * elements tend to be integrated into groups if they are within an enclosure
+        * used to override other Gestalts
+    * Closure
+        * The closure principle means that people like things to be simple and to fit inside known constructs. 
+        * Because of this, we tend to see a set of individual elements as as single, recognizable shape when we can.
+        * When pieces of a whole are missing, we fill in the missing pieces.
+        * Many charting tools include borders or shading.
+        * The Closure principle tells us that these are very likely unnecessary.
+    * Continuity
+        * Continuity is similar to closure: when looking at objects, our eyes seek the smoothest path and naturally create continuity in what we see, even where it might not exist.
+        * The continuity principle is why we can often eliminate some chart elements like axes lines.
+    * Connection
+        * elements tend to be grouped together if they are connected
+        * can also override other Gestalts
+* Lack of Visual Order
+    * When design is thoughtful, it fades into the background so that your audience doesn’t even notice it.
+    * When its not, however, your audience feels the burden.
+    * Create clean horizontal and vertical lines in the design
+    * Without visual cues, your audience will read in a “Z” pattern, starting in the top left, moving to the right and down.
+    * Avoid diagonal components including lines and text
+    * E.g. people read text rotated at 45 degrees ~50% slower than normal text
+        * 90 degree text will be read over 200% slower
+    * White space is blank space on the page.
+        * Blank space should never be filled “just because”
+        * Remember that every additional element on a chart takes cognitive load to process, so white space helps focus your audience.
+        * Guidelines
+            * Margins should remain free of text and visuals
+            * Resist the urge to stretch visuals to take up the available space
+            * If there is only one really important thing, think about making that the only thing on your slide
+        * Whitespace means no non-data-ink
+    * Strategic use of contrast
+        * Do not include too many contrasting elements
+        * Use color intentionally to draw attention and to group things together
+        * Use grey scale to de-emphasize but still leave elements on the chart for context
+        * Consider removing numeric values if they don't add to the message
+        * Remove portions of the chart scafolding when they are not necessary
+
+## Lecture 4 – Directing the Audience
+
+* Concept: We have about 3 – 8 seconds with our reader in order to get their attention.
+* Concept: Without visual cues, most readers will read in a Z-shaped pattern from left to right, then down a line, and so on.
+* Concept: The lecture on removing clutter was about “not hurting” our audience. This lecture is on “enhancing the understanding” of our  audience by providing direction.
+* We “see” with a combination of our:
+* Eye(s)
+* Light comes into the lens and focuses on the retina
+* Retina is made from brain cells (seeing and thinking are one at this point)
+* Results from this step travel via the optic nerve to the brain
+* Optic nerve(s)
+* Throughput is approx. 10Mbps (each)
+* Brain
+* “Editor”: chooses, forgets, summarizes, focuses, etc.
+* The Eye-brain system has approx. 1000x the resolution of a standard power point slide
+* How do we take advantage of the eye-brain system with our visual displays?
+* Pre-attentive Attributes help us focus our audience’s attention on a specific part of our visualization
+* Orientation
+* Ordered data with a few values
+* Quantitative data
+* Ordinal data
+* Not commonly supported
+* Shape
+* Unordered data with a medium number of values
+* Categorical data
+* Broadly supported
+* Make sure shapes are mapped to the same data across different visuals (otherwise, confusion follows).
+* Line Length
+* Ordered data with many values
+* Quantitative data
+* Ordinal data
+* This preattentive attribute explains why bar charts are very effective for their use
+* Broadly supported in data viz tools
+* Line Width
+* Ordered data with a few values
+* Ordinal data
+* Supported by some data viz tools
+(your instructor thinks this one is silly)
+* Size
+* Ordered data with many useful values
+* Quantitative data
+* Ordinal data
+* Broadly supported data viz tools
+* Sometimes Size is used when Shape is a better encoding
+* Added Marks
+* Unordered data with a medium number of values
+* Categorical data
+* Mostly represented by call-outs in charts
+* Enclosure
+* Unordered data with many values
+* Categorical data
+* Relationship data
+* Most often represented by call-out boxes overlaying some portion of the chart
+* Hue (color)
+* Unordered data with a few values (five is getting to be too many)
+* Categorical data
+* Broadly supported
+* Don’t over-do it, many data viz tools will run out of different colors and then wrap the colors so two different elements can be represented by the same color. Very confusing.
+* Be aware that a portion of your audience may be color blind and won’t be able to distinguish between certain color combinations.
+* Intensity (saturation)
+* Ordered data with a few values
+* Ordinal data
+* Broadly supported
+* Will generally require a legend to define the order
+* Be careful of visual habits e.g. temperature ranges often represented by a red to blue scale
+* Position
+* Ordered data with many values
+* Quantitative data
+* Ordinal data
+* Categorical data
+* Relationship data
+* Broadly supported
+* Note: listed twice, once as a way to reduce cognitive load and again as a way to draw attention
+* Guideline: use preattentive attributes sparingly; too many reduces focus for the audience
+* Process steps:
+* Start with everything “untreated”
+* ”Treat” aspects of the data visualization one at a time with an effective preattentive attribute
+* (Stop before you add too many “treatments”)
+
+## Lab 3 – introduction to ggplot
+
+* ggplot2 is a package created by Hadley Wickam to increase the functionality of plotting in R.
+* It is a flexible and extensible way to generate graphics
+* Allows the user to programmatically control nearly every element of the chart.
+* Two main functions to generate plots
+* qplot – create basic charts, can send aesthetic mappings in as parameters
+* ggplot – create any chart, need to add various elements one at a time for display
+* Main elements of a chart, can be used in combination with one another to generate the desired visualization
+* aes() – aesthetic mapping, map data to elements of the chart
+* geom – geometrical objects added to layers of the chart. Examples include the following (this list is in no way exhaustive)
+* geom_point – scatterplot
+* geom_bar – bar chart
+* geom_line – line chart
+* geom_hline – add a horizontal line
+* facets – generates the same plot for different slices of the data. Will cover in lab 4.
+* Scales – this set of functions allows the user to control the axes
+* Theme – allows the user to control the overall look and feel.
