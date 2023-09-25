@@ -78,82 +78,90 @@ library(ggplot2)
 
 ## Lecture 4 – Directing the Audience
 
-* Concept: We have about 3 – 8 seconds with our reader in order to get their attention.
-* Concept: Without visual cues, most readers will read in a Z-shaped pattern from left to right, then down a line, and so on.
-* Concept: The lecture on removing clutter was about “not hurting” our audience. This lecture is on “enhancing the understanding” of our  audience by providing direction.
-* We “see” with a combination of our:
-* Eye(s)
-* Light comes into the lens and focuses on the retina
-* Retina is made from brain cells (seeing and thinking are one at this point)
-* Results from this step travel via the optic nerve to the brain
-* Optic nerve(s)
-* Throughput is approx. 10Mbps (each)
-* Brain
-* “Editor”: chooses, forgets, summarizes, focuses, etc.
-* The Eye-brain system has approx. 1000x the resolution of a standard power point slide
-* How do we take advantage of the eye-brain system with our visual displays?
-* Pre-attentive Attributes help us focus our audience’s attention on a specific part of our visualization
-* Orientation
-* Ordered data with a few values
-* Quantitative data
-* Ordinal data
-* Not commonly supported
-* Shape
-* Unordered data with a medium number of values
-* Categorical data
-* Broadly supported
-* Make sure shapes are mapped to the same data across different visuals (otherwise, confusion follows).
-* Line Length
-* Ordered data with many values
-* Quantitative data
-* Ordinal data
-* This preattentive attribute explains why bar charts are very effective for their use
-* Broadly supported in data viz tools
-* Line Width
-* Ordered data with a few values
-* Ordinal data
-* Supported by some data viz tools
-(your instructor thinks this one is silly)
-* Size
-* Ordered data with many useful values
-* Quantitative data
-* Ordinal data
-* Broadly supported data viz tools
-* Sometimes Size is used when Shape is a better encoding
-* Added Marks
-* Unordered data with a medium number of values
-* Categorical data
-* Mostly represented by call-outs in charts
-* Enclosure
-* Unordered data with many values
-* Categorical data
-* Relationship data
-* Most often represented by call-out boxes overlaying some portion of the chart
-* Hue (color)
-* Unordered data with a few values (five is getting to be too many)
-* Categorical data
-* Broadly supported
-* Don’t over-do it, many data viz tools will run out of different colors and then wrap the colors so two different elements can be represented by the same color. Very confusing.
-* Be aware that a portion of your audience may be color blind and won’t be able to distinguish between certain color combinations.
-* Intensity (saturation)
-* Ordered data with a few values
-* Ordinal data
-* Broadly supported
-* Will generally require a legend to define the order
-* Be careful of visual habits e.g. temperature ranges often represented by a red to blue scale
-* Position
-* Ordered data with many values
-* Quantitative data
-* Ordinal data
-* Categorical data
-* Relationship data
-* Broadly supported
-* Note: listed twice, once as a way to reduce cognitive load and again as a way to draw attention
-* Guideline: use preattentive attributes sparingly; too many reduces focus for the audience
-* Process steps:
-* Start with everything “untreated”
-* ”Treat” aspects of the data visualization one at a time with an effective preattentive attribute
-* (Stop before you add too many “treatments”)
+* Preattentive attributes introduction
+    * The primary goal of data visualization is to make it easier to see patterns and trends
+    * How do we do that?
+        * Remove clutter
+        * Focus attention
+* Memory review
+    * Sensory (or Iconic) Memory 
+        * Holds information for a fraction of a second
+        * Tuned to a set of preattentive attributes
+    * Short-term (or Working) memory
+        * People can keep about four chunks of visual information in their short-term memory
+    * Long-term memory
+        * Aggregate of visual and verbal memory, which work differently
+        * Images can help us recall things quicker
+    * Studies show that we have 3-8 seconds before audiences decide whether they will continue looking at a piece of content.
+* Preattentive attributes enable our audience to see what we want them to see before they even know they’re seeing it!
+* Preattentive attribute notes
+    * These are all the preattentive attributes
+        * Orientation
+        * Shape
+        * Line length
+        * Line width
+        * Size
+        * Curvature
+        * Added marks
+        * Enclosure
+        * Hue
+        * Intensity
+        * Spatial position
+        * Motion
+    * Note that people tend to associate quantitative values for some (but not all) preattentive attributes
+    * Preattentive attributes are used for:
+        * Drawing your audience’s attention
+        * Creating a visual hierarchy of information
+* Preattentive attributes in text
+    * Bold
+    * Color
+    * Italics
+    * Size
+    * Separate spatially (add whitespace)
+    * Online/enclosure
+    * Underline/added marks
+* Preattentive attributes in charts
+    * without preattentive attributes, your audience needs to search for the insights in your charts
+    * this could be good if that's what you want. most often, it isn't.
+    * use color to draw attention and make a point.
+    * only add multiple colors if you have multiple points
+    * do not use color just for the sake of using color
+    * you can repeat the same chart with multiple treatments. this could be a good way to lead your audience through a story.
+    * labels can add clutter if there are too many of them
+    * think about strategically using labels on charts
+* Strategic Preattentive Attributes
+    * Size, color, page placement
+    * Size
+        * Relative size denotes relative importance
+        * This is especially true when you have multiple visualizations displayed at once
+        * Make sure you use size intentionally, otherwise your audience will not focus where you want them to.
+        * Size is also why certain chart types work so well. bubble plots, for example.
+    * Color
+        * use sparingly
+        * too many colors are distracting and lose preattentive value
+        * switch to saturation/instensity if you need something related to a quantitative value
+        * always use color intentionally. 
+            * do not use color just to have color. 
+            * it will be confusing to your audience
+        * Other color notes
+            * use color consistently -- Using color consistently means you train your audience to know what to expect. Colors should only change if meaning changes.
+            * Design with colorblindness in mind -- Avoid using shades of red and green together. If you need red/green, make sure there’s some other visual indication of difference.
+            * Be thoughtful of tone -- Be thoughtful of how the results will be perceived. Softer tones could come across as too “nice”. Bolder tones more aggressive.
+            * Brand colors -- In most circumstances, yes. But, brand colors may not have been chosen with data visualizations in mind. When brand colors can’t be used, use standard colors (black, grey) or pick a complementary color.
+    * Page placement
+        * Without other visual cues, most members of you audience will read in a Z pattern (left to right, top to bottom).
+        * Take advantage of this by placing things on the page in this order.
+        * Don’t make your audience work too hard (they may not get your point).
+        * On a related note, when possible, make sure your charts follow generally acceptable patterns (e.g. negative values on the left, positive on the right).
+* Using preattentive attributes
+    * Guideline: use preattentive attributes sparingly; too many reduces focus for the audience
+    * Process steps:
+        * Start with everything "untreated"
+        * "Treat" aspects of the data visualization one at a time with an effective preattentive attribute (Stop before you add too many "treatments")
+
+
+
+
 
 ## Lab 3 – introduction to ggplot
 
